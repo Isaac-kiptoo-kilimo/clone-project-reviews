@@ -14,13 +14,13 @@ let currentItem=0;
 // let the initial item
 
 window.addEventListener('DOMContentLoaded',(e)=>{
-   showThePerson(currentItem)
+   showThePerson()
 })
 
 // show a person based on the item
 
-const showThePerson=(person)=>{
-   const item=reviews[person];
+const showThePerson=()=>{
+   const item=reviews[currentItem];
    img.src=item.img
    author.textContent=item.name
    job.textContent=item.job
@@ -33,7 +33,7 @@ nextBtn.addEventListener('click',(e)=>{
    if(currentItem>reviews.length-1){
       currentItem=0;
    }
-   showThePerson(currentItem) 
+   showThePerson() 
 })
 prevBtn.addEventListener('click',(e)=>{
    e.preventDefault
@@ -41,5 +41,5 @@ prevBtn.addEventListener('click',(e)=>{
    if(currentItem<0){
       currentItem=reviews.length-1;
    }
-   showThePerson(currentItem)
+   showThePerson()
 })
