@@ -10,10 +10,30 @@ const btn=document.querySelector(".btn");
 const randomBtn=document.querySelectorAll(".randomBtn")
 
 // lets start with the initial value
-let currentItem=3;
+let currentItem=0;
 // let the initial item
 
 window.addEventListener('DOMContentLoaded',(e)=>{
-   const item=reviews[currentItem];
+   showThePerson(currentItem)
+})
+
+// show a person based on the item
+
+const showThePerson=(person)=>{
+   const item=reviews[person];
    img.src=item.img
+   author.textContent=item.name
+   job.textContent=item.job
+   info.textContent=item.Text
+}
+
+nextBtn.addEventListener('click',(e)=>{
+   e.preventDefault
+   currentItem++
+   showThePerson(currentItem) 
+})
+prevBtn.addEventListener('click',(e)=>{
+   e.preventDefault
+   currentItem--;
+   showThePerson(currentItem)
 })
