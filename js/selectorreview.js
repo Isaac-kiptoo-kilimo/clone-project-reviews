@@ -38,8 +38,8 @@ nextBtn.addEventListener('click',(e)=>{
 prevBtn.addEventListener('click',(e)=>{
    e.preventDefault
    currentItem--;
-   if(currentItem>reviews.length+1){
-      currentItem=0;
+   if(currentItem<0){
+      currentItem=reviews.length-1;
    }
    showThePerson(currentItem)
 })
