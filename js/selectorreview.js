@@ -30,10 +30,16 @@ const showThePerson=(person)=>{
 nextBtn.addEventListener('click',(e)=>{
    e.preventDefault
    currentItem++
+   if(currentItem>reviews.length-1){
+      currentItem=0;
+   }
    showThePerson(currentItem) 
 })
 prevBtn.addEventListener('click',(e)=>{
    e.preventDefault
    currentItem--;
+   if(currentItem>reviews.length+1){
+      currentItem=0;
+   }
    showThePerson(currentItem)
 })
